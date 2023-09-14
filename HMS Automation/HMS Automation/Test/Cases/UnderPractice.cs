@@ -23,6 +23,9 @@ namespace HMS_Automation.Test.Cases
 
             IWebElement PatientCreate = driver.FindElement(By.XPath("//button[normalize-space()='Add Patient']"));
             PatientCreate.Click();
+            IWebElement firstName = driver.FindElement(By.ClassName("mat-input-element"));
+            firstName.SendKeys("Raj");
+
         }
     }
 }
