@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMS Automation", "HMS Automation\HMS Automation.csproj", "{23DE6DC2-4A4C-477C-B337-4DA76EB26BCE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23DE6DC2-4A4C-477C-B337-4DA76EB26BCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23DE6DC2-4A4C-477C-B337-4DA76EB26BCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23DE6DC2-4A4C-477C-B337-4DA76EB26BCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23DE6DC2-4A4C-477C-B337-4DA76EB26BCE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {637207F2-599A-4C96-883B-3E9B2489AEAD}
+	EndGlobalSection
+EndGlobal

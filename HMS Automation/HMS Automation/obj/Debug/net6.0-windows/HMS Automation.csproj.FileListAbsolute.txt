@@ -1,0 +1,93 @@
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\HMS Automation.exe
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\HMS Automation.deps.json
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\HMS Automation.runtimeconfig.json
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\HMS Automation.dll
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\HMS Automation.pdb
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.csproj.AssemblyReference.cache
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS_Automation.Form1.resources
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.csproj.GenerateResource.cache
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.AssemblyInfoInputs.cache
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.AssemblyInfo.cs
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.dll
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\refint\HMS Automation.dll
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.pdb
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.genruntimeconfig.cache
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\ref\HMS Automation.dll
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS_Automation.Properties.Resources.resources
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\selenium-manager\linux\selenium-manager
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\selenium-manager\macos\selenium-manager
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\selenium-manager\windows\selenium-manager.exe
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\WebDriver.dll
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\System.Drawing.Common.dll
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\hp\source\repos\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.csproj.CopyComplete
+D:\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\selenium-manager\linux\selenium-manager
+D:\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\selenium-manager\macos\selenium-manager
+D:\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\selenium-manager\windows\selenium-manager.exe
+D:\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\HMS Automation.exe
+D:\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\HMS Automation.deps.json
+D:\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\HMS Automation.runtimeconfig.json
+D:\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\HMS Automation.dll
+D:\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\HMS Automation.pdb
+D:\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Abstractions.dll
+D:\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
+D:\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
+D:\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
+D:\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+D:\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\WebDriver.dll
+D:\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\System.Drawing.Common.dll
+D:\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.csproj.AssemblyReference.cache
+D:\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS_Automation.Form1.resources
+D:\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS_Automation.Properties.Resources.resources
+D:\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.csproj.GenerateResource.cache
+D:\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.GeneratedMSBuildEditorConfig.editorconfig
+D:\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.AssemblyInfoInputs.cache
+D:\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.AssemblyInfo.cs
+D:\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.csproj.CoreCompileInputs.cache
+D:\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.csproj.CopyComplete
+D:\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.dll
+D:\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\refint\HMS Automation.dll
+D:\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.pdb
+D:\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.genruntimeconfig.cache
+D:\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\ref\HMS Automation.dll
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\selenium-manager\linux\selenium-manager
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\selenium-manager\macos\selenium-manager
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\selenium-manager\windows\selenium-manager.exe
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\HMS Automation.exe
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\HMS Automation.deps.json
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\HMS Automation.runtimeconfig.json
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\HMS Automation.dll
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\HMS Automation.pdb
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\WebDriver.dll
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\System.Drawing.Common.dll
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.csproj.AssemblyReference.cache
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS_Automation.Form1.resources
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS_Automation.Properties.Resources.resources
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.csproj.GenerateResource.cache
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.AssemblyInfoInputs.cache
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.AssemblyInfo.cs
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.csproj.CoreCompileInputs.cache
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.csproj.CopyComplete
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.dll
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\refint\HMS Automation.dll
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.pdb
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\HMS Automation.genruntimeconfig.cache
+C:\Users\hp\Downloads\HMS Automation\HMS Automation\HMS Automation\HMS Automation\obj\Debug\net6.0-windows\ref\HMS Automation.dll
