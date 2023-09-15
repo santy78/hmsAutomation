@@ -36,7 +36,8 @@ namespace HMS_Automation.Test.Cases
             IWebElement email=driver.FindElement(By.Id("mat-input-4"));
             email.SendKeys("Raj" + random.Next(100, 1000) + "@gmail.com");
 
-            IWebElement genderDropdown = driver.FindElement(By.XPath("(//div[@class='mat-select-arrow-wrapper ng-tns-c56-19'])[1]"));
+           
+            IWebElement genderDropdown = driver.FindElement(By.ClassName("mat-select-placeholder")); 
             genderDropdown.Click();
 
             IWebElement genderSelect = driver.FindElement(By.XPath("(//mat-option[@id='mat-option-0'])[1]"));
@@ -54,10 +55,13 @@ namespace HMS_Automation.Test.Cases
             IWebElement city = driver.FindElement(By.Id("mat-input-8"));
             city.SendKeys("test");
 
-            IWebElement stateDropDown = driver.FindElement(By.XPath("(//div[@class='mat-select-arrow ng-tns-c56-25'])[1]"));
+           
+            IWebElement stateDropDown = driver.FindElement(By.ClassName("mat-select-placeholder"));
             stateDropDown.Click();
 
             IWebElement state = driver.FindElement(By.XPath("(//mat-option[@id='mat-option-30'])[1]"));
+
+           
             state.Click();
             IWebElement pin = driver.FindElement(By.Id("mat-input-9"));
             pin.SendKeys("78909");
