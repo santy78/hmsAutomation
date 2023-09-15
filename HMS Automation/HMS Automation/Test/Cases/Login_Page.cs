@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,13 +32,47 @@ namespace HMS_Automation.Test.Cases
                 IWebElement loginButton = driver.FindElement(By.CssSelector("button[type='submit']"));
 
                 // Perform actions on the loginButton element
+               
                 loginButton.Click();
 
-                Practice practice=new Practice();
+               
+               
+
+                Practice practice =new Practice();
                 practice.ChoosePractice(driver);
 
-                UnderPractice addPatient = new UnderPractice();
-                addPatient.Practice(driver);
+                /*  UnderPractice addPatient = new UnderPractice();
+                   addPatient.Practice(driver);*/
+
+                /*  CreateOrder createOrder = new CreateOrder();
+                  createOrder.Order(driver);
+
+                  TrainingTracker trainingTracker = new TrainingTracker();
+                  trainingTracker.Training(driver);
+
+                  MyPatients myPatients = new MyPatients();
+                  myPatients.Patients(driver);
+
+                */
+
+                TrainingReport trainingReport = new TrainingReport();
+                trainingReport.ReportOfTraining(driver);
+
+                BillingReport billingReport = new BillingReport();
+                billingReport.ReportOfBilling(driver);
+
+                ServiceTimeReport serviceTimeReport = new ServiceTimeReport();
+                serviceTimeReport.ReportOfServiceTime(driver);
+
+                MissedUploadReport missedUploadReport = new MissedUploadReport();
+                missedUploadReport.ReportOfMissedUpload(driver);
+
+                UnreachableReport unreachableReport = new UnreachableReport();
+                unreachableReport.ReportOfUnreachable(driver);
+
+                MonthlyPatientReport monthlyPatientReport = new MonthlyPatientReport();
+                monthlyPatientReport.ReportOfMonthlyPatient(driver);
+
 
 
             }
