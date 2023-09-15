@@ -41,10 +41,10 @@ namespace HMS_Automation.Test.Cases
                 Practice practice =new Practice();
                 practice.ChoosePractice(driver);
 
-                /*  UnderPractice addPatient = new UnderPractice();
-                   addPatient.Practice(driver);*/
+                  UnderPractice addPatient = new UnderPractice();
+                   addPatient.Practice(driver);
 
-                /*  CreateOrder createOrder = new CreateOrder();
+                  CreateOrder createOrder = new CreateOrder();
                   createOrder.Order(driver);
 
                   TrainingTracker trainingTracker = new TrainingTracker();
@@ -52,8 +52,6 @@ namespace HMS_Automation.Test.Cases
 
                   MyPatients myPatients = new MyPatients();
                   myPatients.Patients(driver);
-
-                */
 
                 TrainingReport trainingReport = new TrainingReport();
                 trainingReport.ReportOfTraining(driver);
