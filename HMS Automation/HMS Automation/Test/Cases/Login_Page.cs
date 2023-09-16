@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using HMS_Automation.Model;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -11,12 +12,15 @@ namespace HMS_Automation.Test.Cases
 {
     internal class Login_Page
     {
+        public static int SessionId;
         public const string PagePath = "/login";
         public  void login(string username,string password, IWebDriver driver)
         {
             {
+                SessionId = HMSAutomationDBContext.GetBatchID();
+
                 // Create a new instance of the ChromeDriver
-             
+
 
                 // Navigate to a webpage
                 driver.Navigate().GoToUrl("https://portal-dev.hmsrpm.com/HMS.DevUI/#/login");
@@ -41,23 +45,24 @@ namespace HMS_Automation.Test.Cases
                 Practice practice =new Practice();
                 practice.ChoosePractice(driver);
 
-                  UnderPractice addPatient = new UnderPractice();
-                   addPatient.Practice(driver);
+                UnderPractice addPatient = new UnderPractice();
+                 addPatient.Practice(driver);
 
-                  CreateOrder createOrder = new CreateOrder();
-                  createOrder.Order(driver);
+                CreateOrder createOrder = new CreateOrder();
+                createOrder.Order(driver);
 
-                  TrainingTracker trainingTracker = new TrainingTracker();
-                  trainingTracker.Training(driver);
+                TrainingTracker trainingTracker = new TrainingTracker();
+                trainingTracker.Training(driver);
 
-                  MyPatients myPatients = new MyPatients();
-                  myPatients.Patients(driver);
+                MyPatients myPatients = new MyPatients();
+                myPatients.Patients(driver);
 
-                TrainingReport trainingReport = new TrainingReport();
-                trainingReport.ReportOfTraining(driver);
+              TrainingReport trainingReport = new TrainingReport();
+              trainingReport.ReportOfTraining(driver);
 
+              
                 BillingReport billingReport = new BillingReport();
-                billingReport.ReportOfBilling(driver);
+                billingReport.ReportOfBilling(driver, SessionId);
 
                 ServiceTimeReport serviceTimeReport = new ServiceTimeReport();
                 serviceTimeReport.ReportOfServiceTime(driver);
