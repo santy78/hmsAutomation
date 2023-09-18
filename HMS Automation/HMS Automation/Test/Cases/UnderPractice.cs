@@ -84,7 +84,7 @@ namespace HMS_Automation.Test.Cases
             skipClick.Click();
             IWebElement skip2Click= driver.FindElement(By.XPath("(//button[@class='mat-stepper-next btn ms-3 reset-btn'])[1]"));
             skip2Click.Click();
-            /*IWebElement languagedropdown = driver.FindElement(By.ClassName("mat-select-placeholder"));
+          /* IWebElement languagedropdown = driver.FindElement(By.ClassName("ng-tns-c54-49"));
             languagedropdown.Click();
             IWebElement language = driver.FindElement(By.XPath("(//mat-option[@id='mat-option-5'])[1]"));
             language.Click();
@@ -97,8 +97,8 @@ namespace HMS_Automation.Test.Cases
             IWebElement monitoringDropdown = driver.FindElement(By.ClassName("mat-form-field-flex"));
             monitoringDropdown.Click();
             IWebElement monitoring = driver.FindElement(By.XPath("(//mat-option[@id='mat-option-73'])[1]"));
-            monitoring.Click();
-           */ IWebElement patientEMRId = driver.FindElement(By.XPath("mat-input-23"));
+            monitoring.Click();*/
+           IWebElement patientEMRId = driver.FindElement(By.Id("mat-input-23"));
             patientEMRId.SendKeys("1"+ random.Next(100, 1000));
 
             IWebElement submit = driver.FindElement(By.XPath("(//button[normalize-space()='Submit'])[1]"));
