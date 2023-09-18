@@ -67,6 +67,8 @@ namespace HMS_Automation.Test.Cases
 
                 UnderPractice addPatient = new UnderPractice();
                  addPatient.Practice(driver);
+                Onboarding patientonboarding = new Onboarding();
+                patientonboarding.PatientOnboarding(driver);
 
                 CreateOrder createOrder = new CreateOrder();
                 createOrder.Order(driver);
