@@ -18,29 +18,49 @@ namespace HMS_Automation.Test.Cases
         {
             {
                 SessionId = HMSAutomationDBContext.GetBatchID();
+                HMSAutomationResult automationresult = new HMSAutomationResult();
+                HMSAutomationDBContext automationDBContext = new HMSAutomationDBContext();
+                automationresult.BatchId = SessionId;
+                automationresult.ScreenName = "LOGIN";
+                automationresult.ResponseType = "";
+                automationresult.Request = "";
+                automationresult.Response = "";
+                automationresult.Errors = "";
+                automationresult.DateTime = DateTime.Now.ToString();
 
-                // Create a new instance of the ChromeDriver
 
+                try
+                {
+                    // Navigate to a webpage
+                    driver.Navigate().GoToUrl("https://portal-dev.hmsrpm.com/HMS.DevUI/#/login");
 
-                // Navigate to a webpage
-                driver.Navigate().GoToUrl("https://portal-dev.hmsrpm.com/HMS.DevUI/#/login");
+                    IWebElement usernameField = driver.FindElement(By.Id("phoneoremail"));
+                    // usernameField.SendKeys("associatemanager@hmsdemo.com");
+                    usernameField.SendKeys(username);
 
-                IWebElement usernameField = driver.FindElement(By.Id("phoneoremail"));
-               // usernameField.SendKeys("associatemanager@hmsdemo.com");
-                usernameField.SendKeys(username);
+                    IWebElement passwordField = driver.FindElement(By.Id("password"));
+                    // passwordField.SendKeys("Default@123");
+                    passwordField.SendKeys(password);
 
-                IWebElement passwordField = driver.FindElement(By.Id("password"));
-               // passwordField.SendKeys("Default@123");
-                passwordField.SendKeys(password);
+                    IWebElement loginButton = driver.FindElement(By.CssSelector("button[type='submit']"));
 
-                IWebElement loginButton = driver.FindElement(By.CssSelector("button[type='submit']"));
+                    // Perform actions on the loginButton element
+                    loginButton.Click();
 
-                // Perform actions on the loginButton element
-               
-                loginButton.Click();
+                    // Add a small wait (e.g., 2 seconds) after clicking the login button
+                    // Add a wait using Thread.Sleep (e.g., 2 seconds)
+                    Thread.Sleep(TimeSpan.FromSeconds(5));
 
-               
-               
+                    automationresult.ResponseType = "PASS";
+                }
+                catch (NoSuchElementException e)
+                {
+                    // Handle the case when the element is not found
+                    Console.WriteLine("Element not found: " + e.Message);
+                    automationresult.ResponseType = "FAIL";
+                    automationresult.Errors = e.Message;
+                }
+                automationDBContext.SaveAutomationResult(automationresult);
 
                 Practice practice =new Practice();
                 practice.ChoosePractice(driver);
