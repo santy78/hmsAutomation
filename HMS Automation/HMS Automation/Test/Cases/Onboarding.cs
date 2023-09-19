@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using HMS_Automation.Model;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,39 +11,67 @@ namespace HMS_Automation.Test.Cases
 {
     internal class Onboarding
     {
+        public static int SessionId;
+        
         public void PatientOnboarding(IWebDriver driver)
         {
-            //IWebDriver driver
-            IWebElement onboarding = driver.FindElement(By.XPath("(//a[normalize-space()='PATIENT ONBOARDING'])[1]"));
 
-            // Click the element
+            SessionId = HMSAutomationDBContext.GetBatchID();
+            HMSAutomationResult automationresult = new HMSAutomationResult();
+            HMSAutomationDBContext automationDBContext = new HMSAutomationDBContext();
+            automationresult.BatchId = SessionId;
+            automationresult.ScreenName = "PATIENT ONBOARDING";
+            automationresult.ResponseType = "";
+            automationresult.Request = "";
+            automationresult.Response = "";
+            automationresult.Errors = "";
+            automationresult.DateTime = DateTime.Now.ToString();
+            try
+            {
+                //IWebDriver driver
+                IWebElement onboarding = driver.FindElement(By.XPath("(//a[normalize-space()='PATIENT ONBOARDING'])[1]"));
 
-            onboarding.Click();
-            IWebElement action = driver.FindElement(By.XPath("//mat-icon[@role='button']"));
-            action.Click();
-            IWebElement verification = driver.FindElement(By.XPath("//button[normalize-space()='Update Verification Statuses']"));
-            verification.Click();
-            IWebElement checkbox1 = driver.FindElement(By.XPath("(//span[@class='mat-checkbox-inner-container'])[1]"));
-             checkbox1.Click();
-            IWebElement checkbox2 = driver.FindElement(By.XPath("(//span[@class='mat-checkbox-inner-container'])[2]"));
-            checkbox2.Click();
-            IWebElement checkbox3 = driver.FindElement(By.XPath("(//span[@class='mat-checkbox-inner-container'])[3]"));
-            checkbox3.Click();
-            IWebElement checkbox4 = driver.FindElement(By.XPath("(//span[@class='mat-checkbox-inner-container'])[4]"));
-            checkbox4.Click();
-            IWebElement checkbox5 = driver.FindElement(By.XPath("(//span[@class='mat-checkbox-inner-container'])[5]"));
-            checkbox5.Click();
-            IWebElement checkbox6 = driver.FindElement(By.XPath("(//span[@class='mat-checkbox-inner-container'])[6]"));
-            checkbox6.Click();
-            IWebElement verify = driver.FindElement(By.XPath("//button[normalize-space()='Verify']"));
-            verify.Click();
-            IWebElement verbalconsent = driver.FindElement(By.XPath("//button[normalize-space()='Obtain Verbal Consent']"));
-            verbalconsent.Click();
-            IWebElement enrollment = driver.FindElement(By.XPath("//span[normalize-space()='YES']"));
-            enrollment.Click();
-            IWebElement qualifyRPM = driver.FindElement(By.XPath("//button[normalize-space()='Qualify For RPM']"));
-            qualifyRPM.Click();
-               
+                // Click the element
+
+                onboarding.Click();
+                IWebElement action = driver.FindElement(By.XPath("//mat-icon[@role='button']"));
+                action.Click();
+                IWebElement verification = driver.FindElement(By.XPath("//button[normalize-space()='Update Verification Statuses']"));
+                verification.Click();
+                IWebElement checkbox1 = driver.FindElement(By.XPath("(//span[@class='mat-checkbox-inner-container'])[1]"));
+                checkbox1.Click();
+                IWebElement checkbox2 = driver.FindElement(By.XPath("(//span[@class='mat-checkbox-inner-container'])[2]"));
+                checkbox2.Click();
+                IWebElement checkbox3 = driver.FindElement(By.XPath("(//span[@class='mat-checkbox-inner-container'])[3]"));
+                checkbox3.Click();
+                IWebElement checkbox4 = driver.FindElement(By.XPath("(//span[@class='mat-checkbox-inner-container'])[4]"));
+                checkbox4.Click();
+                IWebElement checkbox5 = driver.FindElement(By.XPath("(//span[@class='mat-checkbox-inner-container'])[5]"));
+                checkbox5.Click();
+                IWebElement checkbox6 = driver.FindElement(By.XPath("(//span[@class='mat-checkbox-inner-container'])[6]"));
+                checkbox6.Click();
+                IWebElement verify = driver.FindElement(By.XPath("//button[normalize-space()='Verify']"));
+                verify.Click();
+                IWebElement verbalconsent = driver.FindElement(By.XPath("//button[normalize-space()='Obtain Verbal Consent']"));
+                verbalconsent.Click();
+                IWebElement enrollment = driver.FindElement(By.XPath("//span[normalize-space()='YES']"));
+                enrollment.Click();
+                IWebElement qualifyRPM = driver.FindElement(By.XPath("//button[normalize-space()='Qualify For RPM']"));
+                qualifyRPM.Click();
+                Thread.Sleep(TimeSpan.FromSeconds(5));
+
+                automationresult.ResponseType = "PASS";
+            }
+            catch (NoSuchElementException e)
+            {
+                // Handle the case when the element is not found
+                Console.WriteLine("Element not found: " + e.Message);
+                automationresult.ResponseType = "FAIL";
+                automationresult.Errors = e.Message;
+            }
+            automationDBContext.SaveAutomationResult(automationresult);
+
+
 
         }
     }

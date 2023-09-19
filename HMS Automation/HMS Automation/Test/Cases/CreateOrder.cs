@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic;
+﻿using HMS_Automation.Model;
+using Microsoft.VisualBasic;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,24 @@ namespace HMS_Automation.Test.Cases
 {
     internal class CreateOrder
     {
+        public static int SessionId;
         public void Order(IWebDriver driver)
         {
-            //createorder screen
+            SessionId = HMSAutomationDBContext.GetBatchID();
+            HMSAutomationResult automationresult = new HMSAutomationResult();
+            HMSAutomationDBContext automationDBContext = new HMSAutomationDBContext();
+            automationresult.BatchId = SessionId;
+            automationresult.ScreenName = "CREATE ORDER";
+            automationresult.ResponseType = "";
+            automationresult.Request = "";
+            automationresult.Response = "";
+            automationresult.Errors = "";
+            automationresult.DateTime = DateTime.Now.ToString();
+            try
+            {
+                //createorder screen
 
-            IWebElement order = driver.FindElement(By.XPath("(//a[normalize-space()='CREATE ORDER'])[1]"));
+                IWebElement order = driver.FindElement(By.XPath("(//a[normalize-space()='CREATE ORDER'])[1]"));
             order.Click();
 
             //action
@@ -46,11 +60,23 @@ namespace HMS_Automation.Test.Cases
             IWebElement orderSubmit = driver.FindElement(By.XPath("(//button[@class='mat-focus-indicator accept-btn px-5 confirmation-text rounded-0 mat-button mat-button-base ng-star-inserted'])[1]"));
             orderSubmit.Click();
 
-            //successfull
-
-            IWebElement orderSuccessfull = driver.FindElement(By.XPath("(//mat-icon[normalize-space()='cancel'])[1]"));
+                //successfull
+                Thread.Sleep(TimeSpan.FromSeconds(5));
+                IWebElement orderSuccessfull = driver.FindElement(By.XPath("(//mat-icon[normalize-space()='cancel'])[1]"));
             orderSuccessfull.Click();
-           
+                Thread.Sleep(TimeSpan.FromSeconds(5));
+
+                automationresult.ResponseType = "PASS";
+            }
+            catch (NoSuchElementException e)
+            {
+                // Handle the case when the element is not found
+                Console.WriteLine("Element not found: " + e.Message);
+                automationresult.ResponseType = "FAIL";
+                automationresult.Errors = e.Message;
+            }
+            automationDBContext.SaveAutomationResult(automationresult);
+
         }
 
        
