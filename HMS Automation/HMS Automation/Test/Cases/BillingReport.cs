@@ -26,7 +26,8 @@ namespace HMS_Automation.Test.Cases
             {
                 /* IWebElement report = driver.FindElement(By.XPath("(//a[normalize-space()='REPORTS'])[1]"));
                  report.Click();*/
-
+                IWebElement report = driver.FindElement(By.XPath(" //i[@class='fas fa-angle-down rotate-icon']"));
+                report.Click();
                 IWebElement billingReport = driver.FindElement(By.XPath("(//li[@role='tab'])[2]"));
                 billingReport.Click();
 
