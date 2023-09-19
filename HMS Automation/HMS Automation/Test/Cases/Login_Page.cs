@@ -87,10 +87,10 @@ namespace HMS_Automation.Test.Cases
                 billingReport.ReportOfBilling(driver, SessionId);
 
                 ServiceTimeReport serviceTimeReport = new ServiceTimeReport();
-                serviceTimeReport.ReportOfServiceTime(driver);
+                serviceTimeReport.ReportOfServiceTime(driver, SessionId);
 
                 MissedUploadReport missedUploadReport = new MissedUploadReport();
-                missedUploadReport.ReportOfMissedUpload(driver);
+                missedUploadReport.ReportOfMissedUpload(driver, SessionId);
 
                 UnreachableReport unreachableReport = new UnreachableReport();
                 unreachableReport.ReportOfUnreachable(driver);

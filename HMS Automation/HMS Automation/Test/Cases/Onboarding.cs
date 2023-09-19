@@ -16,7 +16,7 @@ namespace HMS_Automation.Test.Cases
         public void PatientOnboarding(IWebDriver driver)
         {
 
-            SessionId = HMSAutomationDBContext.GetBatchID();
+          
             HMSAutomationResult automationresult = new HMSAutomationResult();
             HMSAutomationDBContext automationDBContext = new HMSAutomationDBContext();
             automationresult.BatchId = SessionId;
