@@ -101,26 +101,20 @@ namespace HMS_Automation.Test.Cases
                 IWebElement skip2Click = driver.FindElement(By.XPath("(//button[@class='mat-stepper-next btn ms-3 reset-btn'])[1]"));
                 skip2Click.Click();
                 Thread.Sleep(TimeSpan.FromSeconds(3));
-                /* IWebElement languagedropdown = driver.FindElement(By.ClassName("ng-tns-c54-49"));
-                  languagedropdown.Click();
-                  IWebElement language = driver.FindElement(By.XPath("(//mat-option[@id='mat-option-5'])[1]"));
-                  language.Click();
-
-                  IWebElement timeDropdown = driver.FindElement(By.ClassName("mat-form-field-infix"));
-                  timeDropdown.Click();
-                  IWebElement time = driver.FindElement(By.XPath("(//mat-option[@id='mat-option-7'])[1]"));
-                  time.Click();
-
-                  IWebElement monitoringDropdown = driver.FindElement(By.ClassName("mat-form-field-flex"));
-                  monitoringDropdown.Click();
-                  IWebElement monitoring = driver.FindElement(By.XPath("(//mat-option[@id='mat-option-73'])[1]"));
-                  monitoring.Click();*/
-                IWebElement patientEMRId = driver.FindElement(By.Id("mat-input-23"));
+               
+                IWebElement monitoring = driver.FindElement(By.XPath("//body/div[2]/div[2]/div/mat-dialog-container/app-addpatient/mat-dialog-content/div[3]/div/mat-stepper/div[2]/div[5]/div/form/div[2]/div[1]/div/mat-form-field/div/div[1]/div"));
+                monitoring.Click();
+                
+                IWebElement select = driver.FindElement(By.XPath(" //span[@class='mat-option-text'][normalize-space()='Hypertension']"));
+                select.Click();
+               IWebElement patientEMRId = driver.FindElement(By.Id("mat-input-23"));
                 patientEMRId.SendKeys("1" + random.Next(100, 1000));
 
                 IWebElement submit = driver.FindElement(By.XPath("(//button[normalize-space()='Submit'])[1]"));
                 submit.Click();
                 Thread.Sleep(TimeSpan.FromSeconds(3));
+                IWebElement close = driver.FindElement(By.XPath("//button[normalize-space()='Close']"));
+                close.Click();
             }
             catch (NoSuchElementException e)
             {
