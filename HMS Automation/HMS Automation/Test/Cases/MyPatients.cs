@@ -35,7 +35,7 @@ namespace HMS_Automation.Test.Cases
                 // Handle the case where the element is not found
                 Console.WriteLine("Element not found: " + ex.Message);
                 automationresult.ResponseType = "FAIL";
-                automationresult.Errors = e.Message;
+                automationresult.Errors = ex.Message;
             }
             automationDBContext.SaveAutomationResult(automationresult);
 
