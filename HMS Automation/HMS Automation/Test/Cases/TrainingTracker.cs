@@ -26,36 +26,42 @@ namespace HMS_Automation.Test.Cases
             try
             {
                 //training tracker screen
-
+                Thread.Sleep(TimeSpan.FromSeconds(3));
                 IWebElement training = driver.FindElement(By.XPath("(//a[normalize-space()='TRAINING TRACKER'])[1]"));
             training.Click();
+                Thread.Sleep(TimeSpan.FromSeconds(3));
 
-            //action
-            
-            IWebElement action = driver.FindElement(By.XPath("//mat-icon[normalize-space()='more_horiz']"));
+                //action
+
+                IWebElement action = driver.FindElement(By.XPath("//mat-icon[normalize-space()='more_horiz']"));
             action.Click();
+                Thread.Sleep(TimeSpan.FromSeconds(3));
 
-            IWebElement scheduleTraining = driver.FindElement(By.XPath("(//button[normalize-space()='Schedule Training'])[1]"));
+                IWebElement scheduleTraining = driver.FindElement(By.XPath("(//button[normalize-space()='Schedule Training'])[1]"));
             scheduleTraining.Click();
+                Thread.Sleep(TimeSpan.FromSeconds(3));
 
-            //submit Schedule Training
+                //submit Schedule Training
 
-            IWebElement submit = driver.FindElement(By.XPath("(//button[@class='mat-focus-indicator accept-btn px-5 confirmation-text rounded-0 mat-button mat-button-base ng-star-inserted'])[1]"));
+                IWebElement submit = driver.FindElement(By.XPath("(//button[@class='mat-focus-indicator accept-btn px-5 confirmation-text rounded-0 mat-button mat-button-base ng-star-inserted'])[1]"));
             submit.Click();
+                
 
                 //To complete Training 
 
                 //action
-            Thread.Sleep(TimeSpan.FromSeconds(5));
+                Thread.Sleep(TimeSpan.FromSeconds(5));
             IWebElement actionForComplete = driver.FindElement(By.XPath("//mat-icon[normalize-space()='more_horiz']"));
             actionForComplete.Click();
+                Thread.Sleep(TimeSpan.FromSeconds(3));
 
-            IWebElement completeTraining = driver.FindElement(By.XPath("(//button[normalize-space()='Mark Training Complete'])[1]"));
+                IWebElement completeTraining = driver.FindElement(By.XPath("(//button[normalize-space()='Mark Training Complete'])[1]"));
             completeTraining.Click();
+                Thread.Sleep(TimeSpan.FromSeconds(3));
 
-            //submit complete Training
+                //submit complete Training
 
-            IWebElement finalSubmit = driver.FindElement(By.XPath("(//button[@class='mat-focus-indicator accept-btn confirmation-text rounded-0 mat-stroked-button mat-button-base'])[1]"));
+                IWebElement finalSubmit = driver.FindElement(By.XPath("(//button[@class='mat-focus-indicator accept-btn confirmation-text rounded-0 mat-stroked-button mat-button-base'])[1]"));
              finalSubmit.Click();
              Thread.Sleep(TimeSpan.FromSeconds(5));
 

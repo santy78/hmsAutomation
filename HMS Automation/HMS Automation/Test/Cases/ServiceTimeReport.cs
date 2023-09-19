@@ -30,7 +30,7 @@ namespace HMS_Automation.Test.Cases
                // report.Click();
 
                  IWebElement servicetimeReport = driver.FindElement(By.XPath("(//li[@role='tab'])[3]"));
-            servicetimeReport.Click();
+               servicetimeReport.Click();
                 Thread.Sleep(TimeSpan.FromSeconds(3));
 
                 automationresult.ResponseType = "PASS";

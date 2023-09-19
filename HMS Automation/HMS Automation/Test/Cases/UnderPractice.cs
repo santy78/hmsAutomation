@@ -115,6 +115,7 @@ namespace HMS_Automation.Test.Cases
                 Thread.Sleep(TimeSpan.FromSeconds(3));
                 IWebElement close = driver.FindElement(By.XPath("//button[normalize-space()='Close']"));
                 close.Click();
+                Thread.Sleep(TimeSpan.FromSeconds(5));
             }
             catch (NoSuchElementException e)
             {
