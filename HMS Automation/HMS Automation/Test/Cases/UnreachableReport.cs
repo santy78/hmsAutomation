@@ -16,7 +16,7 @@ namespace HMS_Automation.Test.Cases
             HMSAutomationResult automationresult = new HMSAutomationResult();
             HMSAutomationDBContext automationDBContext = new HMSAutomationDBContext();
             automationresult.BatchId = SessionId;
-            automationresult.ScreenName = "Unreachable Report";
+            automationresult.ScreenName = "UNREACHABLE REPORT";
             automationresult.ResponseType = "";
             automationresult.Request = "";
             automationresult.Response = "";

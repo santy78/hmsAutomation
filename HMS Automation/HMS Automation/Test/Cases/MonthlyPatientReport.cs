@@ -18,7 +18,7 @@ namespace HMS_Automation.Test.Cases
             HMSAutomationResult automationresult = new HMSAutomationResult();
             HMSAutomationDBContext automationDBContext = new HMSAutomationDBContext();
             automationresult.BatchId = SessionId;
-            automationresult.ScreenName = "Monthly Patient Report";
+            automationresult.ScreenName = "MONTHLY PATIENT REPORT";
             automationresult.ResponseType = "";
             automationresult.Request = "";
             automationresult.Response = "";

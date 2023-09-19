@@ -17,7 +17,7 @@ namespace HMS_Automation.Test.Cases
             HMSAutomationResult automationresult = new HMSAutomationResult();
             HMSAutomationDBContext automationDBContext = new HMSAutomationDBContext();
             automationresult.BatchId = SessionId;
-            automationresult.ScreenName = "Add Patients";
+            automationresult.ScreenName = "ADD PATIENTS";
             automationresult.ResponseType = "";
             automationresult.Request = "";
             automationresult.Response = "";
@@ -116,6 +116,7 @@ namespace HMS_Automation.Test.Cases
                 IWebElement close = driver.FindElement(By.XPath("//button[normalize-space()='Close']"));
                 close.Click();
                 Thread.Sleep(TimeSpan.FromSeconds(5));
+                automationresult.ResponseType = "PASS";
             }
             catch (NoSuchElementException e)
             {
