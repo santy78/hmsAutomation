@@ -63,21 +63,21 @@ namespace HMS_Automation.Test.Cases
                 automationDBContext.SaveAutomationResult(automationresult);
 
                 Practice practice =new Practice();
-                practice.ChoosePractice(driver);
+                practice.ChoosePractice(driver, SessionId);
 
                 UnderPractice addPatient = new UnderPractice();
-                 addPatient.Practice(driver);
+                 addPatient.Practice(driver, SessionId);
                 Onboarding patientonboarding = new Onboarding();
-                patientonboarding.PatientOnboarding(driver);
+                patientonboarding.PatientOnboarding(driver, SessionId);
 
                 CreateOrder createOrder = new CreateOrder();
-                createOrder.Order(driver);
+                createOrder.Order(driver, SessionId);
 
                 TrainingTracker trainingTracker = new TrainingTracker();
-                trainingTracker.Training(driver);
+                trainingTracker.Training(driver, SessionId);
 
                 MyPatients myPatients = new MyPatients();
-                myPatients.Patients(driver);
+                myPatients.Patients(driver, SessionId);
 
               TrainingReport trainingReport = new TrainingReport();
               trainingReport.ReportOfTraining(driver);
@@ -93,13 +93,14 @@ namespace HMS_Automation.Test.Cases
                 missedUploadReport.ReportOfMissedUpload(driver, SessionId);
 
                 UnreachableReport unreachableReport = new UnreachableReport();
-                unreachableReport.ReportOfUnreachable(driver);
+                unreachableReport.ReportOfUnreachable(driver, SessionId);
 
                 MonthlyPatientReport monthlyPatientReport = new MonthlyPatientReport();
-                monthlyPatientReport.ReportOfMonthlyPatient(driver);
+                monthlyPatientReport.ReportOfMonthlyPatient(driver, SessionId);
 
 
-
+                Logout logout = new Logout();
+                logout.logout_click(driver, SessionId);
             }
         }
     }
