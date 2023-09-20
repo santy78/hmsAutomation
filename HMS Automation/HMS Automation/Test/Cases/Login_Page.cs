@@ -35,7 +35,7 @@ namespace HMS_Automation.Test.Cases
                     driver.Navigate().GoToUrl("https://portal-dev.hmsrpm.com/HMS.DevUI/#/login");
 
                     IWebElement usernameField = driver.FindElement(By.Id("phoneoremail"));
-                    // usernameField.SendKeys("associatemanager@hmsdemo.com");
+                    // usernameField.Sendeys("associatemanager@hmsdemo.com");
                     usernameField.SendKeys(username);
 
                     IWebElement passwordField = driver.FindElement(By.Id("password"));
@@ -89,6 +89,8 @@ namespace HMS_Automation.Test.Cases
 
                     MonthlyPatientReport monthlyPatientReport = new MonthlyPatientReport();
                     monthlyPatientReport.ReportOfMonthlyPatient(driver);
+                     Logout logout = new Logout();
+                logout.logout_click(driver, SessionId);
 
 
                 }
@@ -101,9 +103,10 @@ namespace HMS_Automation.Test.Cases
                 }
                 automationDBContext.SaveAutomationResult(automationresult);
 
-              
 
 
+
+               
             }
         }
     }
