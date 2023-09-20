@@ -52,6 +52,45 @@ namespace HMS_Automation.Test.Cases
                     Thread.Sleep(TimeSpan.FromSeconds(5));
 
                     automationresult.ResponseType = "PASS";
+
+
+                    Practice practice = new Practice();
+                    practice.ChoosePractice(driver);
+
+                    UnderPractice addPatient = new UnderPractice();
+                    addPatient.Practice(driver);
+                    Onboarding patientonboarding = new Onboarding();
+                    patientonboarding.PatientOnboarding(driver);
+
+                    CreateOrder createOrder = new CreateOrder();
+                    createOrder.Order(driver);
+
+                    TrainingTracker trainingTracker = new TrainingTracker();
+                    trainingTracker.Training(driver);
+
+                    MyPatients myPatients = new MyPatients();
+                    myPatients.Patients(driver);
+
+                    TrainingReport trainingReport = new TrainingReport();
+                    trainingReport.ReportOfTraining(driver);
+
+
+                    BillingReport billingReport = new BillingReport();
+                    billingReport.ReportOfBilling(driver, SessionId);
+
+                    ServiceTimeReport serviceTimeReport = new ServiceTimeReport();
+                    serviceTimeReport.ReportOfServiceTime(driver, SessionId);
+
+                    MissedUploadReport missedUploadReport = new MissedUploadReport();
+                    missedUploadReport.ReportOfMissedUpload(driver, SessionId);
+
+                    UnreachableReport unreachableReport = new UnreachableReport();
+                    unreachableReport.ReportOfUnreachable(driver);
+
+                    MonthlyPatientReport monthlyPatientReport = new MonthlyPatientReport();
+                    monthlyPatientReport.ReportOfMonthlyPatient(driver);
+
+
                 }
                 catch (NoSuchElementException e)
                 {
@@ -62,42 +101,7 @@ namespace HMS_Automation.Test.Cases
                 }
                 automationDBContext.SaveAutomationResult(automationresult);
 
-                Practice practice =new Practice();
-                practice.ChoosePractice(driver);
-
-                UnderPractice addPatient = new UnderPractice();
-                 addPatient.Practice(driver);
-                Onboarding patientonboarding = new Onboarding();
-                patientonboarding.PatientOnboarding(driver);
-
-                CreateOrder createOrder = new CreateOrder();
-                createOrder.Order(driver);
-
-                TrainingTracker trainingTracker = new TrainingTracker();
-                trainingTracker.Training(driver);
-
-                MyPatients myPatients = new MyPatients();
-                myPatients.Patients(driver);
-
-              TrainingReport trainingReport = new TrainingReport();
-              trainingReport.ReportOfTraining(driver);
-
               
-                BillingReport billingReport = new BillingReport();
-                billingReport.ReportOfBilling(driver, SessionId);
-
-                ServiceTimeReport serviceTimeReport = new ServiceTimeReport();
-                serviceTimeReport.ReportOfServiceTime(driver, SessionId);
-
-                MissedUploadReport missedUploadReport = new MissedUploadReport();
-                missedUploadReport.ReportOfMissedUpload(driver, SessionId);
-
-                UnreachableReport unreachableReport = new UnreachableReport();
-                unreachableReport.ReportOfUnreachable(driver);
-
-                MonthlyPatientReport monthlyPatientReport = new MonthlyPatientReport();
-                monthlyPatientReport.ReportOfMonthlyPatient(driver);
-
 
 
             }
