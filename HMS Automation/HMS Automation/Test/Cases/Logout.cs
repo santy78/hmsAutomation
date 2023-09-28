@@ -1,5 +1,7 @@
 ﻿using HMS_Automation.Model;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,10 +26,11 @@ namespace HMS_Automation.Test.Cases
             automationresult.DateTime = DateTime.Now.ToString();
             try
             {
-                IWebElement element = driver.FindElement(By.XPath("(//img[@class='mb-3 me-2'])[1]"));
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                IWebElement element = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("(//img[@class='mb-3 me-2'])[1]")));
                 element.Click();
 
-                IWebElement logout = driver.FindElement(By.XPath("(//button[normalize-space()='Logout'])[1]"));
+                IWebElement logout = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("(//button[normalize-space()='Logout'])[1]")));
                 logout.Click();
                 automationresult.ResponseType = "PASS";
             }
@@ -37,6 +40,13 @@ namespace HMS_Automation.Test.Cases
                 Console.WriteLine("Element not found: " + e.Message);
                 automationresult.ResponseType = "FAIL";
                 automationresult.Errors = e.Message;
+            }
+            catch (Exception ex)
+            {
+                // Handle other exceptions
+                Console.WriteLine("An error occurred: " + ex.Message);
+                automationresult.ResponseType = "FAIL";
+                automationresult.Errors = ex.Message;
             }
             automationDBContext.SaveAutomationResult(automationresult);
         }

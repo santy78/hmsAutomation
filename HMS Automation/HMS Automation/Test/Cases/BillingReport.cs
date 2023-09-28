@@ -1,5 +1,7 @@
 ﻿using HMS_Automation.Model;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,21 +26,30 @@ namespace HMS_Automation.Test.Cases
 
             try
             {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
                 /* IWebElement report = driver.FindElement(By.XPath("(//a[normalize-space()='REPORTS'])[1]"));
                  report.Click();*/
                 //IWebElement report = driver.FindElement(By.XPath(" //i[@class='fas fa-angle-down rotate-icon']"));
                 // report.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
-                IWebElement billingReport = driver.FindElement(By.XPath("(//a[normalize-space()='99454'])[1]"));
+                
+                IWebElement billingReport = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("(//a[normalize-space()='99454'])[1]")));
                 billingReport.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
+             
                 automationresult.ResponseType = "PASS";
+            }
+            catch (NoSuchElementException e)
+            {
+                // Handle the case when the element is not found
+                Console.WriteLine("Element not found: " + e.Message);
+                automationresult.ResponseType = "FAIL";
+                automationresult.Errors = e.Message;
             }
             catch (Exception ex)
             {
-             
-                automationresult.Errors = ex.Message;
+                // Handle other exceptions
+                Console.WriteLine("An error occurred: " + ex.Message);
                 automationresult.ResponseType = "FAIL";
+                automationresult.Errors = ex.Message;
             }
 
             var database = automationDBContext.SaveAutomationResult(automationresult);

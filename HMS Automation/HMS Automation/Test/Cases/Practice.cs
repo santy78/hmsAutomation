@@ -1,24 +1,15 @@
 ﻿using HMS_Automation.Model;
-using Microsoft.VisualBasic;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace HMS_Automation.Test.Cases
 {
     internal class Practice
     {
-        
-        public  void ChoosePractice(IWebDriver driver, int SessionId)
+        public void ChoosePractice(IWebDriver driver, int SessionId)
         {
-          
             HMSAutomationResult automationresult = new HMSAutomationResult();
             HMSAutomationDBContext automationDBContext = new HMSAutomationDBContext();
             automationresult.BatchId = SessionId;
@@ -28,20 +19,25 @@ namespace HMS_Automation.Test.Cases
             automationresult.Response = "";
             automationresult.Errors = "";
             automationresult.DateTime = DateTime.Now.ToString();
+
             try
             {
-                //IWebDriver driver
-                Thread.Sleep(TimeSpan.FromSeconds(5));
-                IWebElement element = driver.FindElement(By.XPath("//*[@id=\"mat-input-0\"]"));
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                IWebElement practiceInput = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"mat-input-0\"]")));
 
-                // Click the element
-                element.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(5));
-                element.SendKeys(Constants.practice);
-                Thread.Sleep(TimeSpan.FromSeconds(5));
-                IWebElement element1 = driver.FindElement(By.XPath("//body/div[2]/div[2]/div/mat-dialog-container/app-practicelist/div[2]/div"));
-                element1.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(5));
+                // Click the input field
+                practiceInput.Click();
+
+                // Send keys to the input field
+               // practiceInput.SendKeys(Constants.practice);
+
+                // Wait for the practice list element to be clickable
+                IWebElement practiceListElement = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//body/div[2]/div[2]/div/mat-dialog-container/app-practicelist/div[2]/div")));
+
+                // Click the practice list element
+                practiceListElement.Click();
+
+                // Set ResponseType to "PASS" if successful
                 automationresult.ResponseType = "PASS";
             }
             catch (NoSuchElementException e)
@@ -51,6 +47,15 @@ namespace HMS_Automation.Test.Cases
                 automationresult.ResponseType = "FAIL";
                 automationresult.Errors = e.Message;
             }
+            catch (Exception ex)
+            {
+                // Handle other exceptions
+                Console.WriteLine("An error occurred: " + ex.Message);
+                automationresult.ResponseType = "FAIL";
+                automationresult.Errors = ex.Message;
+            }
+
+            // Save the automation result to the database
             automationDBContext.SaveAutomationResult(automationresult);
         }
     }

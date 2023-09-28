@@ -58,8 +58,8 @@ namespace HMS_Automation.Test.Cases
                     Practice practice = new Practice();
                     practice.ChoosePractice(driver, SessionId);
 
-                    UnderPractice addPatient = new UnderPractice();
-                    addPatient.Practice(driver, SessionId, RegisterLastName);
+                    /*UnderPractice addPatient = new UnderPractice();
+                    addPatient.Practice(driver, SessionId, RegisterLastName);*/
                     Onboarding patientonboarding = new Onboarding();
                     patientonboarding.PatientOnboarding(driver, SessionId, RegisterLastName);
 
@@ -91,7 +91,9 @@ namespace HMS_Automation.Test.Cases
                     MonthlyPatientReport monthlyPatientReport = new MonthlyPatientReport();
                     monthlyPatientReport.ReportOfMonthlyPatient(driver, SessionId);
                      Logout logout = new Logout();
-                logout.logout_click(driver, SessionId);
+                     logout.logout_click(driver, SessionId);
+
+                  //  driver.Quit();
 
 
                 }

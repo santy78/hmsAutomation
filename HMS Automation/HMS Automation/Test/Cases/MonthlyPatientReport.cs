@@ -1,5 +1,7 @@
 ﻿using HMS_Automation.Model;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,16 +28,24 @@ namespace HMS_Automation.Test.Cases
             automationresult.DateTime = DateTime.Now.ToString();
             try
             {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
                 // Find and click on the "servicetimeReport" element
-                IWebElement servicetimeReport = driver.FindElement(By.XPath("(//li[@role='tab'])[6]"));
+                IWebElement servicetimeReport = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("(//li[@role='tab'])[6]")));
                 servicetimeReport.Click();
                 Thread.Sleep(TimeSpan.FromSeconds(5));
                 automationresult.ResponseType = "PASS";
             }
-            catch (NoSuchElementException ex)
+            catch (NoSuchElementException e)
             {
-                // Handle the case where the element is not found
-                Console.WriteLine("Element not found: " + ex.Message);
+                // Handle the case when the element is not found
+                Console.WriteLine("Element not found: " + e.Message);
+                automationresult.ResponseType = "FAIL";
+                automationresult.Errors = e.Message;
+            }
+            catch (Exception ex)
+            {
+                // Handle other exceptions
+                Console.WriteLine("An error occurred: " + ex.Message);
                 automationresult.ResponseType = "FAIL";
                 automationresult.Errors = ex.Message;
             }

@@ -1,5 +1,7 @@
 ﻿using HMS_Automation.Model;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +24,7 @@ namespace HMS_Automation.Test.Cases
             HMSAutomationResult automationresult = new HMSAutomationResult();
             HMSAutomationDBContext automationDBContext = new HMSAutomationDBContext();
             automationresult.BatchId = SessionId;
-            automationresult.ScreenName = "PATIENTS";
+            automationresult.ScreenName = "MY PATIENTS";
             automationresult.ResponseType = "";
             automationresult.Request = "";
             automationresult.Response = "";
@@ -30,86 +32,93 @@ namespace HMS_Automation.Test.Cases
             automationresult.DateTime = DateTime.Now.ToString();
             try
             {
-                Thread.Sleep(TimeSpan.FromSeconds(5));
-                IWebElement myPatients = driver.FindElement(By.XPath("(//a[normalize-space()='MY PATIENTS'])[1]"));
-                Thread.Sleep(TimeSpan.FromSeconds(5));
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                IWebElement myPatients = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("(//a[normalize-space()='MY PATIENTS'])[1]")));
+               
                 myPatients.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(5));
-                 IWebElement onClick = driver.FindElement(By.XPath("//body/app-root/app-home/div/mat-drawer-container/mat-drawer-content/app-monitoring/div/div[2]/table/tbody/tr[1]/td[1]/div"));
+               
+                 IWebElement onClick = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//body/app-root/app-home/div/mat-drawer-container/mat-drawer-content/app-monitoring/div/div[2]/table/tbody/tr[1]/td[1]/div")));
                  onClick.Click();
-                 Thread.Sleep(TimeSpan.FromSeconds(5));
-                IWebElement call = driver.FindElement(By.XPath("//body/app-root/app-home/div/mat-drawer-container/mat-drawer-content/app-monitoring/div/div[2]/table/tbody/tr[2]/td/div/div/div/div[2]/div/div[2]/div[1]/button"));
+               
+                IWebElement call = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//body/app-root/app-home/div/mat-drawer-container/mat-drawer-content/app-monitoring/div/div[2]/table/tbody/tr[2]/td/div/div/div/div[2]/div/div[2]/div[1]/button")));
                  call.Click();
-                 Thread.Sleep(TimeSpan.FromSeconds(5));
+             
 
-                 IWebElement select = driver.FindElement(By.XPath("//body/div[2]/div[2]/div/mat-dialog-container/div/div[2]/div/div[2]/form/div/div[1]/mat-form-field/div/div[1]/div/mat-select/div/div[2]"));
+                 IWebElement select = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//body/div[2]/div[2]/div/mat-dialog-container/div/div[2]/div/div[2]/form/div/div[1]/mat-form-field/div/div[1]/div/mat-select/div/div[2]")));
                  select.Click();
-                 Thread.Sleep(TimeSpan.FromSeconds(5));
-                 IWebElement selectOption = driver.FindElement(By.XPath("//span[normalize-space()='Hypertension']"));
+                 
+                 IWebElement selectOption = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[normalize-space()='Hypertension']")));
                  selectOption.Click();
-                 Thread.Sleep(TimeSpan.FromSeconds(5));
-                 IWebElement readingOption = driver.FindElement(By.XPath("//body/div[2]/div[2]/div/mat-dialog-container/div/div[2]/div/div[2]/form/div/div[2]/mat-form-field/div/div[1]/div/mat-select/div/div[2]"));
+                
+                 IWebElement readingOption = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//body/div[2]/div[2]/div/mat-dialog-container/div/div[2]/div/div[2]/form/div/div[2]/mat-form-field/div/div[1]/div/mat-select/div/div[2]")));
                  readingOption.Click();
-                 Thread.Sleep(TimeSpan.FromSeconds(5));
-                 IWebElement readingType = driver.FindElement(By.XPath("//span[normalize-space()='Critical']"));
+       
+                 IWebElement readingType = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[normalize-space()='Critical']")));
                  readingType.Click();
-                 Thread.Sleep(TimeSpan.FromSeconds(5));
-                 IWebElement question = driver.FindElement(By.XPath("//body/div[2]/div[2]/div/mat-dialog-container/div/div[2]/div/div[2]/form/form/div/div[20]/section/mat-radio-group/mat-radio-button[2]/label/span[1]/span[1]"));
+              
+                 IWebElement question = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//body/div[2]/div[2]/div/mat-dialog-container/div/div[2]/div/div[2]/form/form/div/div[20]/section/mat-radio-group/mat-radio-button[2]/label/span[1]/span[1]")));
                  question.Click();
-                 Thread.Sleep(TimeSpan.FromSeconds(5));
-                 IWebElement submit = driver.FindElement(By.XPath("//body/div[2]/div[2]/div/mat-dialog-container/div/div[2]/div/div[2]/form/form/button"));
+              
+                 IWebElement submit = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//body/div[2]/div[2]/div/mat-dialog-container/div/div[2]/div/div[2]/form/form/button")));
                  submit.Click();
-                 Thread.Sleep(TimeSpan.FromSeconds(5));
-                 IWebElement close = driver.FindElement(By.XPath("//div[@class='cdk-global-overlay-wrapper']"));
+   
+                 IWebElement close = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@class='cdk-global-overlay-wrapper']")));
                  close.Click();
-                  IWebElement cancel = driver.FindElement(By.XPath("//mat-icon[normalize-space()='cancel']"));
+                  IWebElement cancel = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//mat-icon[normalize-space()='cancel']")));
                  cancel.Click();
 
-                 IWebElement email = driver.FindElement(By.XPath("//button[contains(text(),'EMAIL')]"));
+                 IWebElement email = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[contains(text(),'EMAIL')]")));
                  email.Click();
-                 Thread.Sleep(TimeSpan.FromSeconds(5));
-                 IWebElement send = driver.FindElement(By.XPath("//button[normalize-space()='SEND']"));
+           
+                 IWebElement send = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[normalize-space()='SEND']")));
                  send.Click();
-                 Thread.Sleep(TimeSpan.FromSeconds(5));
+              
                  //IWebElement cancel1 = driver.FindElement(By.XPath("//mat-icon[normalize-space()='cancel']"));
                  //cancel1.Click();
-                 IWebElement addNotes = driver.FindElement(By.XPath("//button[contains(text(),'ADD NOTES')]"));
+                 IWebElement addNotes = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[contains(text(),'ADD NOTES')]")));
                  addNotes.Click();
-                 Thread.Sleep(TimeSpan.FromSeconds(5));
-                 IWebElement addNotes1 = driver.FindElement(By.XPath("//a[contains(text(),'Add Notes')]"));
+                
+                 IWebElement addNotes1 = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//a[contains(text(),'Add Notes')]")));
                  addNotes1.Click();
-                 Thread.Sleep(TimeSpan.FromSeconds(5));
-                 IWebElement notes1 = driver.FindElement(By.Id("textArea"));
+             
+                 IWebElement notes1 = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("textArea")));
 
                  notes1.SendKeys(Constants.notes1);
-                 IWebElement save = driver.FindElement(By.XPath("//button[normalize-space()='Save']"));
+                 IWebElement save = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[normalize-space()='Save']")));
                  save.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(5));
-                 IWebElement onClick1 = driver.FindElement(By.XPath("//body/app-root/app-home/div/mat-drawer-container/mat-drawer-content/app-monitoring/div/div[2]/table/tbody/tr[1]/td[1]/div"));
+            
+                 IWebElement onClick1 = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//body/app-root/app-home/div/mat-drawer-container/mat-drawer-content/app-monitoring/div/div[2]/table/tbody/tr[1]/td[1]/div")));
                 onClick1.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(5));
+            
                 /*IWebElement profile = driver.FindElement(By.XPath("//body/app-root/app-home/div/mat-drawer-container/mat-drawer-content/app-monitoring/div/div[2]/table/tbody/tr[2]/td/div/div/div/div[1]/div/mat-card/div[1]/div[2]/div/div[1]/a"));
                 profile.Click();
                 Thread.Sleep(TimeSpan.FromSeconds(5));
                 IWebElement profile1 = driver.FindElement(By.XPath("//button[@id='pills-bpressure-tab']"));
                 profile1.Click();
                 Thread.Sleep(TimeSpan.FromSeconds(5));*/
-                IWebElement alerts = driver.FindElement(By.XPath("//body/app-root/app-home/div/mat-drawer-container/mat-drawer-content/app-monitoring/div/div[2]/table/tbody/tr[2]/td/div/div/div/div[2]/div/div[2]/div[6]/button"));
+                IWebElement alerts = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//body/app-root/app-home/div/mat-drawer-container/mat-drawer-content/app-monitoring/div/div[2]/table/tbody/tr[2]/td/div/div/div/div[2]/div/div[2]/div[6]/button")));
                 alerts.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(5));
+             
                
 
-               IWebElement cancel1 = driver.FindElement(By.XPath("//body/div[2]/div[2]/div/mat-dialog-container/div/div[1]/div/div[3]/mat-icon"));
+               IWebElement cancel1 = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//body/div[2]/div[2]/div/mat-dialog-container/div/div[1]/div/div[3]/mat-icon")));
                 cancel1.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(5));
+              
                 //(//button[normalize-space()='Action Log and Notes'])[1]
 
                 automationresult.ResponseType = "PASS";
             }
-            catch (NoSuchElementException ex)
+            catch (NoSuchElementException e)
             {
-                // Handle the case where the element is not found
-                Console.WriteLine("Element not found: " + ex.Message);
+                // Handle the case when the element is not found
+                Console.WriteLine("Element not found: " + e.Message);
+                automationresult.ResponseType = "FAIL";
+                automationresult.Errors = e.Message;
+            }
+            catch (Exception ex)
+            {
+                // Handle other exceptions
+                Console.WriteLine("An error occurred: " + ex.Message);
                 automationresult.ResponseType = "FAIL";
                 automationresult.Errors = ex.Message;
             }

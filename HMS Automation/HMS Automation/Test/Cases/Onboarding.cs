@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
-using HMS_Automation.DTOs;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 
 namespace HMS_Automation.Test.Cases
 {
@@ -35,67 +36,68 @@ namespace HMS_Automation.Test.Cases
             try
             {
                 //IWebDriver driver
-                Thread.Sleep(TimeSpan.FromSeconds(5));
-               
-               IWebElement onboarding = driver.FindElement(By.XPath("(//a[normalize-space()='PATIENT ONBOARDING'])[1]"));
-                Thread.Sleep(TimeSpan.FromSeconds(5));
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
+
+                IWebElement onboarding = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("(//a[normalize-space()='PATIENT ONBOARDING'])[1]")));
+              
                 // Click the element
 
                 onboarding.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(5));
-                IWebElement onboarding1 = driver.FindElement(By.XPath("//body/app-root/app-home/div/mat-drawer-container/mat-drawer-content/app-onboarding/div/div[1]/app-search/div/div/div/div[1]/div/button/span[1]/span/mat-icon[2]"));
+                
+                IWebElement onboarding1 = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//body/app-root/app-home/div/mat-drawer-container/mat-drawer-content/app-onboarding/div/div[1]/app-search/div/div/div/div[1]/div/button/span[1]/span/mat-icon[2]")));
                 onboarding1.Click();
                 
-                IWebElement lastname1 = driver.FindElement(By.XPath("(//input[@id='mat-input-2'])[1]"));
-                Thread.Sleep(TimeSpan.FromSeconds(5));
+                IWebElement lastname1 = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("(//input[@id='mat-input-2'])[1]")));
+               
                 lastname1.SendKeys(RegisterLastName);
                 
 
                 
 
-                Thread.Sleep(TimeSpan.FromSeconds(5));
-                IWebElement submit = driver.FindElement(By.XPath("//body/app-root/app-home/div/mat-drawer-container/mat-drawer-content/app-onboarding/div/div[1]/app-search/div/div/div/div[2]/div/form/div[2]/div[2]/button[1]"));
+             
+                IWebElement submit = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//body/app-root/app-home/div/mat-drawer-container/mat-drawer-content/app-onboarding/div/div[1]/app-search/div/div/div/div[2]/div/form/div[2]/div[2]/button[1]")));
                 submit.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
-                IWebElement action = driver.FindElement(By.XPath("//mat-icon[@role='button']"));
+            
+                IWebElement action = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//mat-icon[@role='button']")));
                 action.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
-                IWebElement verification = driver.FindElement(By.XPath("//button[normalize-space()='Update Verification Statuses']"));
+             
+                IWebElement verification = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[normalize-space()='Update Verification Statuses']")));
                 verification.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
-                IWebElement checkbox1 = driver.FindElement(By.XPath("(//span[@class='mat-checkbox-inner-container'])[1]"));
+               
+                IWebElement checkbox1 = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("(//span[@class='mat-checkbox-inner-container'])[1]")));
                 checkbox1.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
-                IWebElement checkbox2 = driver.FindElement(By.XPath("(//span[@class='mat-checkbox-inner-container'])[2]"));
+              
+                IWebElement checkbox2 = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("(//span[@class='mat-checkbox-inner-container'])[2]")));
                 checkbox2.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
-                IWebElement checkbox3 = driver.FindElement(By.XPath("(//span[@class='mat-checkbox-inner-container'])[3]"));
+              
+                IWebElement checkbox3 = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("(//span[@class='mat-checkbox-inner-container'])[3]")));
                 checkbox3.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
-                IWebElement checkbox4 = driver.FindElement(By.XPath("(//span[@class='mat-checkbox-inner-container'])[4]"));
+                
+                IWebElement checkbox4 = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("(//span[@class='mat-checkbox-inner-container'])[4]")));
                 
                 checkbox4.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
-                IWebElement checkbox5 = driver.FindElement(By.XPath("(//span[@class='mat-checkbox-inner-container'])[5]"));
+               
+                IWebElement checkbox5 = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("(//span[@class='mat-checkbox-inner-container'])[5]")));
                 checkbox5.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
+                
                // IWebElement checkbox6 = driver.FindElement(By.XPath("(//span[@class='mat-checkbox-inner-container'])[6]"));
                // checkbox6.Click();
                // Thread.Sleep(TimeSpan.FromSeconds(3));
-                IWebElement verify = driver.FindElement(By.XPath("//button[normalize-space()='Verify']"));
+                IWebElement verify = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[normalize-space()='Verify']")));
                 verify.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
-                IWebElement verbalconsent = driver.FindElement(By.XPath("//button[normalize-space()='Obtain Verbal Consent']"));
-                Thread.Sleep(TimeSpan.FromSeconds(3));
+              
+                IWebElement verbalconsent = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[normalize-space()='Obtain Verbal Consent']")));
+              
                 verbalconsent.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
-                IWebElement enrollment = driver.FindElement(By.XPath("//span[normalize-space()='YES']"));
+          
+                IWebElement enrollment = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[normalize-space()='YES']")));
                 enrollment.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
-                IWebElement qualifyRPM = driver.FindElement(By.XPath("//button[normalize-space()='Qualify For RPM']"));
-                Thread.Sleep(TimeSpan.FromSeconds(5));
+        
+                IWebElement qualifyRPM = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//button[normalize-space()='Qualify For RPM']")));
+         
                 qualifyRPM.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(5));
+           
 
                 automationresult.ResponseType = "PASS";
             }
@@ -105,6 +107,13 @@ namespace HMS_Automation.Test.Cases
                 Console.WriteLine("Element not found: " + e.Message);
                 automationresult.ResponseType = "FAIL";
                 automationresult.Errors = e.Message;
+            }
+            catch (Exception ex)
+            {
+                // Handle other exceptions
+                Console.WriteLine("An error occurred: " + ex.Message);
+                automationresult.ResponseType = "FAIL";
+                automationresult.Errors = ex.Message;
             }
             automationDBContext.SaveAutomationResult(automationresult);
 
