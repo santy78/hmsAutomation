@@ -11,8 +11,8 @@ namespace HMS_Automation.Test.Cases
 {
     internal class CreateOrder
     {
-        public static int SessionId;
-        public void Order(IWebDriver driver)
+        
+        public void Order(IWebDriver driver, int SessionId)
         {
            
             HMSAutomationResult automationresult = new HMSAutomationResult();
@@ -30,49 +30,50 @@ namespace HMS_Automation.Test.Cases
                 Thread.Sleep(TimeSpan.FromSeconds(5));
 
                 IWebElement order = driver.FindElement(By.XPath("(//a[normalize-space()='CREATE ORDER'])[1]"));
-            order.Click();
+                order.Click();
                 Thread.Sleep(TimeSpan.FromSeconds(3));
 
                 //action
 
                 IWebElement action = driver.FindElement(By.XPath("//mat-icon[normalize-space()='more_horiz']"));
-            action.Click();
+                action.Click();
                 Thread.Sleep(TimeSpan.FromSeconds(3));
 
                 IWebElement createOrder = driver.FindElement(By.XPath("(//button[normalize-space()='Create Order'])[1]"));
-            createOrder.Click();
+                createOrder.Click();
                 Thread.Sleep(TimeSpan.FromSeconds(3));
 
                 //device
 
                 IWebElement device = driver.FindElement(By.ClassName("mat-select-placeholder"));
-            device.Click();
+               device.Click();
                 Thread.Sleep(TimeSpan.FromSeconds(3));
 
                 IWebElement selectDevice = driver.FindElement(By.XPath("(//span[normalize-space()='Blood Pressure Cuff'])[1]"));
-            selectDevice.Click();
+               selectDevice.Click();
                 Thread.Sleep(TimeSpan.FromSeconds(3));
 
                 //deviceType
 
                 IWebElement deviceType = driver.FindElement(By.ClassName("mat-select-placeholder"));
-            deviceType.Click();
+                deviceType.Click();
                 Thread.Sleep(TimeSpan.FromSeconds(3));
                 IWebElement selectDeviceType = driver.FindElement(By.XPath("(//span[@class='mat-option-text'])[1]"));
-            selectDeviceType.Click();
+                selectDeviceType.Click();
                 Thread.Sleep(TimeSpan.FromSeconds(3));
 
                 //submit order
 
                 IWebElement orderSubmit = driver.FindElement(By.XPath("(//button[@class='mat-focus-indicator accept-btn px-5 confirmation-text rounded-0 mat-button mat-button-base ng-star-inserted'])[1]"));
-            orderSubmit.Click();
+                orderSubmit.Click();
 
                 //successfull
                 Thread.Sleep(TimeSpan.FromSeconds(5));
                 IWebElement orderSuccessfull = driver.FindElement(By.XPath("(//mat-icon[normalize-space()='cancel'])[1]"));
-            orderSuccessfull.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(5));
+               
+                orderSuccessfull.Click();
 
+                Thread.Sleep(TimeSpan.FromSeconds(5));
                 automationresult.ResponseType = "PASS";
             }
             catch (NoSuchElementException e)

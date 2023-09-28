@@ -10,8 +10,8 @@ namespace HMS_Automation.Test.Cases
 {
     internal class TrainingReport
     {
-        public static int SessionId;
-        public void ReportOfTraining(IWebDriver driver)
+        
+        public void ReportOfTraining(IWebDriver driver, int SessionId)
         {
            
             HMSAutomationResult automationresult = new HMSAutomationResult();
@@ -27,13 +27,14 @@ namespace HMS_Automation.Test.Cases
             try
             {
                 // Find and click on the "REPORTS" element
+                Thread.Sleep(TimeSpan.FromSeconds(5));
                 IWebElement report = driver.FindElement(By.XPath("(//a[normalize-space()='REPORTS'])[1]"));
                 report.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
+                Thread.Sleep(TimeSpan.FromSeconds(5));
                 // Find and click on the "trainingReport" element
                 IWebElement trainingReport = driver.FindElement(By.XPath("(//li[@role='tab'])[1]"));
                 trainingReport.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(2));
+                Thread.Sleep(TimeSpan.FromSeconds(5));
                 automationresult.ResponseType = "PASS";
             }
             catch (NoSuchElementException ex)

@@ -10,8 +10,8 @@ namespace HMS_Automation.Test.Cases
 {
     internal class UnreachableReport
     {
-        public static int SessionId;
-        public void ReportOfUnreachable(IWebDriver driver)
+        
+        public void ReportOfUnreachable(IWebDriver driver, int SessionId)
         {
             HMSAutomationResult automationresult = new HMSAutomationResult();
             HMSAutomationDBContext automationDBContext = new HMSAutomationDBContext();

@@ -1,4 +1,6 @@
-﻿using HMS_Automation.Model;
+﻿using Azure;
+using HMS_Automation.DTOs;
+using HMS_Automation.Model;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -10,9 +12,10 @@ namespace HMS_Automation.Test.Cases
 {
     internal class UnderPractice
     {
-        public static int SessionId;
-        public void Practice(IWebDriver driver)
-       {
+
+        public async Task<UnderPracticeResponse> Practice(IWebDriver driver, int SessionId,string RegisterLastName)
+        {
+            UnderPracticeResponse underPracticeResponse= new UnderPracticeResponse();
             
             HMSAutomationResult automationresult = new HMSAutomationResult();
             HMSAutomationDBContext automationDBContext = new HMSAutomationDBContext();
@@ -23,31 +26,37 @@ namespace HMS_Automation.Test.Cases
             automationresult.Response = "";
             automationresult.Errors = "";
             automationresult.DateTime = DateTime.Now.ToString();
-
+           
             try
             {
                 //IWebDriver driver
+                Thread.Sleep(TimeSpan.FromSeconds(5));
                 IWebElement element = driver.FindElement(By.XPath("(//a[normalize-space()='PRACTICE'])[1]"));
+                Thread.Sleep(TimeSpan.FromSeconds(5));
                 element.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
+                Thread.Sleep(TimeSpan.FromSeconds(5));
                 IWebElement Patientelement = driver.FindElement(By.XPath("//*[@id=\"pills-patient-tab\"]"));
                 Patientelement.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
+                Thread.Sleep(TimeSpan.FromSeconds(5));
                 IWebElement PatientCreate = driver.FindElement(By.XPath("//button[normalize-space()='Add Patient']"));
                 PatientCreate.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
+                Thread.Sleep(TimeSpan.FromSeconds(5));
                 IWebElement firstName = driver.FindElement(By.Id("mat-input-1"));
                 firstName.SendKeys(Constants.firstName);
                 IWebElement lastName = driver.FindElement(By.Id("mat-input-2"));
                 Random random = new Random();
-                lastName.SendKeys(Constants.lastName + random.Next(100, 1000));
+             
+                lastName.SendKeys(RegisterLastName);
+
+                underPracticeResponse.LastName = RegisterLastName;
+                
                 IWebElement phoneNumber = driver.FindElement(By.Id("mat-input-3"));
                 long randomNumber = random.Next(1000000, 1000000); // Generates a random number between 1,000,000,000 and 9,999,999,999
 
-                phoneNumber.SendKeys("100" + randomNumber);
+                phoneNumber.SendKeys("110" + randomNumber);
 
                 IWebElement email = driver.FindElement(By.Id("mat-input-4"));
-                email.SendKeys(Constants.firstName + random.Next(100, 1000) + "@gmail.com");
+                email.SendKeys(Constants.firstName + random.Next(100, 9999) + "@gmail.com");
 
 
                 IWebElement genderDropdown = driver.FindElement(By.ClassName("mat-select-placeholder"));
@@ -81,10 +90,10 @@ namespace HMS_Automation.Test.Cases
 
                 IWebElement nextClick = driver.FindElement(By.XPath(" (//button[@type='submit'][normalize-space()='Next'])[2]"));
                 nextClick.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
+                Thread.Sleep(TimeSpan.FromSeconds(5));
                 IWebElement skipButton = driver.FindElement(By.XPath("(//button[@class='mat-stepper-next btn ms-3 patient-form-reset-btn position-absolute reset-btn'])[1]"));
                 skipButton.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
+                Thread.Sleep(TimeSpan.FromSeconds(5));
                 IWebElement insuranceName = driver.FindElement(By.Id("mat-input-13"));
                 insuranceName.SendKeys(Constants.insuranceName);
                 IWebElement policyNumber = driver.FindElement(By.Id("mat-input-14"));
@@ -97,10 +106,10 @@ namespace HMS_Automation.Test.Cases
                 groupNumber.SendKeys(Constants.groupNumber + random.Next(100, 1000));
                 IWebElement skipClick = driver.FindElement(By.XPath(" (//button[@class='btn ms-3 patient-form-reset-btn position-absolute reset-btn'])[1]"));
                 skipClick.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
+                Thread.Sleep(TimeSpan.FromSeconds(5));
                 IWebElement skip2Click = driver.FindElement(By.XPath("(//button[@class='mat-stepper-next btn ms-3 reset-btn'])[1]"));
                 skip2Click.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
+                Thread.Sleep(TimeSpan.FromSeconds(5));
                
                 IWebElement monitoring = driver.FindElement(By.XPath("//body/div[2]/div[2]/div/mat-dialog-container/app-addpatient/mat-dialog-content/div[3]/div/mat-stepper/div[2]/div[5]/div/form/div[2]/div[1]/div/mat-form-field/div/div[1]/div"));
                 monitoring.Click();
@@ -112,7 +121,7 @@ namespace HMS_Automation.Test.Cases
 
                 IWebElement submit = driver.FindElement(By.XPath("(//button[normalize-space()='Submit'])[1]"));
                 submit.Click();
-                Thread.Sleep(TimeSpan.FromSeconds(3));
+                Thread.Sleep(TimeSpan.FromSeconds(5));
                 IWebElement close = driver.FindElement(By.XPath("//button[normalize-space()='Close']"));
                 close.Click();
                 Thread.Sleep(TimeSpan.FromSeconds(5));
@@ -128,7 +137,7 @@ namespace HMS_Automation.Test.Cases
             automationDBContext.SaveAutomationResult(automationresult);
 
 
-
+            return underPracticeResponse;
 
         }
     }

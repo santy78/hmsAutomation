@@ -10,8 +10,8 @@ namespace HMS_Automation.Test.Cases
 {
     internal class MonthlyPatientReport
     {
-        public static int SessionId;
-        public void ReportOfMonthlyPatient(IWebDriver driver)
+        
+        public void ReportOfMonthlyPatient(IWebDriver driver, int SessionId)
         {
 
 

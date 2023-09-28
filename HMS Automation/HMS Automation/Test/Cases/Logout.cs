@@ -24,10 +24,10 @@ namespace HMS_Automation.Test.Cases
             automationresult.DateTime = DateTime.Now.ToString();
             try
             {
-                IWebElement element = driver.FindElement(By.XPath("//body/div[2]/div[1]"));
+                IWebElement element = driver.FindElement(By.XPath("(//img[@class='mb-3 me-2'])[1]"));
                 element.Click();
 
-                IWebElement logout = driver.FindElement(By.XPath("//body/div[2]/div[2]/div/div/div/button"));
+                IWebElement logout = driver.FindElement(By.XPath("(//button[normalize-space()='Logout'])[1]"));
                 logout.Click();
                 automationresult.ResponseType = "PASS";
             }

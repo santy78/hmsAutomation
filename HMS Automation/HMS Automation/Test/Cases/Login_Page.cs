@@ -27,7 +27,8 @@ namespace HMS_Automation.Test.Cases
                 automationresult.Response = "";
                 automationresult.Errors = "";
                 automationresult.DateTime = DateTime.Now.ToString();
-
+                Random random = new Random();
+                string RegisterLastName=Constants.lastName + random.Next(100, 1000);
 
                 try
                 {
@@ -55,24 +56,24 @@ namespace HMS_Automation.Test.Cases
 
 
                     Practice practice = new Practice();
-                    practice.ChoosePractice(driver);
+                    practice.ChoosePractice(driver, SessionId);
 
                     UnderPractice addPatient = new UnderPractice();
-                    addPatient.Practice(driver);
+                    addPatient.Practice(driver, SessionId, RegisterLastName);
                     Onboarding patientonboarding = new Onboarding();
-                    patientonboarding.PatientOnboarding(driver);
+                    patientonboarding.PatientOnboarding(driver, SessionId, RegisterLastName);
 
                     CreateOrder createOrder = new CreateOrder();
-                    createOrder.Order(driver);
+                    createOrder.Order(driver, SessionId);
 
                     TrainingTracker trainingTracker = new TrainingTracker();
-                    trainingTracker.Training(driver);
+                    trainingTracker.Training(driver,SessionId);
 
                     MyPatients myPatients = new MyPatients();
-                    myPatients.Patients(driver);
+                    myPatients.Patients(driver, SessionId);
 
                     TrainingReport trainingReport = new TrainingReport();
-                    trainingReport.ReportOfTraining(driver);
+                    trainingReport.ReportOfTraining(driver, SessionId);
 
 
                     BillingReport billingReport = new BillingReport();
@@ -85,10 +86,10 @@ namespace HMS_Automation.Test.Cases
                     missedUploadReport.ReportOfMissedUpload(driver, SessionId);
 
                     UnreachableReport unreachableReport = new UnreachableReport();
-                    unreachableReport.ReportOfUnreachable(driver);
+                    unreachableReport.ReportOfUnreachable(driver, SessionId);
 
                     MonthlyPatientReport monthlyPatientReport = new MonthlyPatientReport();
-                    monthlyPatientReport.ReportOfMonthlyPatient(driver);
+                    monthlyPatientReport.ReportOfMonthlyPatient(driver, SessionId);
                      Logout logout = new Logout();
                 logout.logout_click(driver, SessionId);
 
